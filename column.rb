@@ -1,4 +1,4 @@
 require_relative 'element'
 
-class Row < Element
+class Column < Element
 end
