@@ -2,7 +2,7 @@ class Grid
   attr_reader :board, :rows, :columns, :boxes
 
   def initialize(board)
-    validate(board)
+    validate board
     @board = board
     create_rows
     create_columns

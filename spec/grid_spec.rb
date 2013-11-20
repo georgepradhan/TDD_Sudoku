@@ -25,7 +25,7 @@ describe Grid do
 
     it "generates row objects appropriately" do 
       grid.rows.first.numbers.should eq '111111111'
-      grid.rows.last.numbers.should eq '999999999'
+      grid.rows.last.numbers.should eq  '999999999'
     end
   end
 
@@ -35,7 +35,7 @@ describe Grid do
 
     it "generates column objects appropriately" do 
       grid.columns.first.numbers.should eq '123456789'
-      grid.columns.last.numbers.should eq '123456789'
+      grid.columns.last.numbers.should eq  '123456789'
     end
   end
 
