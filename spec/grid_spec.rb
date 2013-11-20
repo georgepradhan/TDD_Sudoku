@@ -15,15 +15,7 @@ describe Grid do
 
     it "generates 9 row objects" do
       Row.should_receive(:new).exactly(9).times
-      Grid.new('1'*9 +
-               '2'*9 +
-               '3'*9 +
-               '4'*9 +
-               '5'*9 +
-               '6'*9 +
-               '7'*9 +
-               '8'*9 +
-               '9'*9 )
+      Grid.new('0'*81) 
     end
   end
 
@@ -33,6 +25,9 @@ describe Grid do
 
     it "generates row objects appropriately" do 
       grid.rows.first.numbers.should eq '111111111'
+      grid.rows.last.numbers.should eq '999999999'
     end
+
+
   end
 end

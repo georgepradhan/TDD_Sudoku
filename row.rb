@@ -7,7 +7,7 @@ class Row
   end
 
   def is_solved?
-    self.numbers.include?(0)
+    !self.numbers.include?('0')
   end
 
 end
