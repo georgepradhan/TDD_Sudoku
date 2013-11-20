@@ -1,5 +1,5 @@
 class Grid
-  attr_reader :board
+  attr_reader :board, :rows
 
   def initialize(board)
     validate(board)
@@ -10,8 +10,9 @@ class Grid
   end
 
   def create_rows
+    @rows = []
     rows = self.board.scan(/.{9}/)
-    rows.each { |row| Row.new(self, row) }
+    rows.each { |row| @rows << Row.new(self, row) }
   end
 
   def create_columns
