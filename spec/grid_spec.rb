@@ -45,6 +45,27 @@ describe Grid do
     end
   end
 
+  describe "#get_row" do 
+    it "returns the right row" do 
+      expect(grid.get_row(0).numbers).to eq '111111111'
+      expect(grid.get_row(9).numbers).to eq '222222222'
+    end
+  end
+
+  describe "#get_column" do 
+    it "returns the right column" do 
+      expect(grid.get_column(0).numbers).to eq '123456789'
+      expect(grid.get_column(10).numbers).to eq '123456789'
+    end
+  end
+
+  describe "#get_box" do 
+    it "returns the right box" do
+      expect(grid.get_box(0).numbers).to eq '111222333'
+      expect(grid.get_box(16).numbers).to eq '111222333'
+    end
+  end
+
   describe "#is_solved?" do
     context "with no 0's" do      
       let(:grid) { Grid.new('1'*81) } 
@@ -58,6 +79,12 @@ describe Grid do
       it "returns false" do 
         grid.is_solved?.should be_false
       end
+    end
+  end
+
+  describe "#sum_of_neighbors" do 
+    it "returns the right sum" do 
+      grid.sum_of_neighbors(0).should eq (1..9).reduce(:+)
     end
   end
 

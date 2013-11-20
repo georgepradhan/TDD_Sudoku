@@ -1,20 +1,11 @@
 class Element
-  attr_reader :board, :numbers
+  attr_reader :numbers
 
-  def initialize(board, numbers)
-    @board = board
+  def initialize(numbers)
     @numbers = numbers    
   end
 
-  def is_solved?
-    !self.numbers.include?('0')
-  end
-
-  def is_solvable?
-    self.numbers.count('0') == 1
-  end
-
   def sum
-    self.numbers.reduce(:+)
+    self.numbers.split('').map(&:to_i).reduce(:+)
   end
 end
