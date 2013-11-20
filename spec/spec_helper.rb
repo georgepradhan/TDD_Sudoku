@@ -17,3 +17,4 @@ RSpec.configure do |config|
 end
 
 require_relative '../grid'
+require_relative '../row'
