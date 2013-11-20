@@ -9,4 +9,12 @@ class Element
   def is_solved?
     !self.numbers.include?('0')
   end
+
+  def is_solvable?
+    self.numbers.count('0') == 1
+  end
+
+  def sum
+    self.numbers.reduce(:+)
+  end
 end
